@@ -1,1 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Profile & Hobbies</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Load Font Awesome for clean icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'wave-slow': 'wave 18s linear infinite',
+                        'wave-medium': 'wave 12s linear infinite reverse',
+                        'wave-fast': 'wave 8s linear infinite',
+                        'float-up': 'floatUp 14s ease-in-out infinite',
+                        'caustics': 'caustics 10s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        wave: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        },
+                        floatUp: {
+                            '0%': { transform: 'translateY(100vh) scale(0.8)', opacity: '0' },
+                            '20%': { opacity: '0.45' },
+                            '80%': { opacity: '0.35' },
+                            '100%': { transform: 'translateY(-15vh) scale(1.2)', opacity: '0' },
+                        },
+                        caustics: {
+                            '0%': { opacity: '0.25', transform: 'scale(1) rotate(-2deg)' },
+                            '100%': { opacity: '0.45', transform: 'scale(1.08) rotate(2deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="relative bg-gradient-to-b from-sky-600 via-cyan-800 to-slate-950 text-slate-800 antialiased min-h-screen flex flex-col justify-center py-10 px-4 sm:px-6 lg:px-8 overflow-x-hidden selection:bg-cyan-300 selection:text-cyan-950">
 
+    <!-- Serene Ocean Animated Backdrop -->
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
+        <!-- Underwater Sunbeams / Light Rays -->
+        <div class="absolute -top-24 left-1/4 w-[36rem] h-[45rem] bg-gradient-to-b from-cyan-200/30 via-teal-300/10 to-transparent blur-3xl animate-caustics origin-top"></div>
+        <div class="absolute -top-20 right-1/4 w-[28rem] h-[40rem] bg-gradient-to-b from-sky-200/25 via-cyan-400/10 to-transparent blur-3xl animate-caustics origin-top" style="animation-delay: -4s;"></div>
+
+        <!-- Subtle Rising Sea Bubbles -->
+        <span class="absolute left-[12%] w-2.5 h-2.5 rounded-full bg-white/30 blur-[0.5px] animate-float-up" style="animation-duration: 13s; animation-delay: 0s;"></span>
+        <span class="absolute left-[28%] w-4 h-4 rounded-full border border-cyan-100/30 bg-cyan-200/10 animate-float-up" style="animation-duration: 17s; animation-delay: 3s;"></span>
+        <span class="absolute left-[52%] w-2 h-2 rounded-full bg-sky-100/40 animate-float-up" style="animation-duration: 11s; animation-delay: 5s;"></span>
+        <span class="absolute left-[74%] w-3.5 h-3.5 rounded-full border border-white/25 bg-white/10 animate-float-up" style="animation-duration: 15s; animation-delay: 1.5s;"></span>
+        <span class="absolute left-[88%] w-2.5 h-2.5 rounded-full bg-cyan-100/30 animate-float-up" style="animation-duration: 14s; animation-delay: 7s;"></span>
+
+        <!-- Layered Rolling Ocean Waves (Bottom Horizon) -->
+        <div class="absolute bottom-0 left-0 w-[200%] h-44 sm:h-60 opacity-30 animate-wave-slow">
+            <svg class="w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="#67e8f9" d="M0,192L60,186.7C120,181,240,171,360,181.3C480,192,600,224,720,213.3C840,203,960,149,1080,144C1200,139,1320,181,1380,202.7L1440,224L1440,320L0,320Z"></path>
+            </svg>
+        </div>
+        <div class="absolute bottom-0 left-0 w-[200%] h-36 sm:h-48 opacity-35 animate-wave-medium">
+            <svg class="w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="#0891b2" d="M0,224L80,213.3C160,203,320,181,480,186.7C640,192,800,224,960,224C1120,224,1280,192,1360,176L1440,160L1440,320L0,320Z"></path>
+            </svg>
+        </div>
+        <div class="absolute bottom-0 left-0 w-[200%] h-28 sm:h-36 opacity-50 animate-wave-fast">
+            <svg class="w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="#0e7490" d="M0,256L60,245.3C120,235,240,213,360,218.7C480,224,600,256,720,261.3C840,267,960,245,1080,229.3C1200,213,1320,203,1380,197.3L1440,192L1440,320L0,320Z"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Main Centered Container -->
+    <main class="max-w-3xl w-full mx-auto space-y-8 relative z-10">
+
+        <!-- Profile Header Card (Frosted Ocean Glass) -->
+        <section class="bg-white/85 backdrop-blur-xl rounded-3xl shadow-xl shadow-cyan-950/25 border border-white/60 p-8 sm:p-10 text-center transition-all duration-300 hover:bg-white/90">
+            
+            <!-- Circular Profile Picture with Aqua Ring & Discreet Change Photo Button -->
+            <div class="relative inline-block group mb-5">
+                <div class="w-36 h-36 sm:w-40 sm:h-40 rounded-full p-1.5 bg-gradient-to-tr from-cyan-400 via-sky-300 to-teal-300 shadow-lg shadow-cyan-900/25 mx-auto">
+                    <img 
+                        id="profile-pic"
+                        src="NAVIDA JUOSAIAH OROBIA PIC .jpg" 
+                        onerror="this.src='https://placehold.co/300x300/cffafe/0e7490?text=JN'"
+                        alt="Juosaiah Navida Profile Picture" 
+                        class="w-full h-full object-cover object-top rounded-full border-4 border-white bg-white"
+                    >
+                </div>
+                
+                <!-- Discreet Upload Photo Trigger Button -->
+                <label for="pfp-upload" title="Change Profile Picture" class="cursor-pointer opacity-80 group-hover:opacity-100 absolute bottom-1 right-1 bg-cyan-700 hover:bg-cyan-600 text-white w-9 h-9 rounded-full flex items-center justify-center shadow-md border-2 border-white transition-all duration-200 hover:scale-105">
+                    <i class="fa-solid fa-camera text-xs"></i>
+                    <input type="file" id="pfp-upload" accept="image/*" class="hidden">
+                </label>
+            </div>
+
+            <!-- Name & Subtitle -->
+            <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                Juosaiah Navida
+            </h1>
+            <p class="text-sm font-semibold text-cyan-800 mt-1">
+                Developer &bull; Endurance Runner &bull; Outdoor Enthusiast
+            </p>
+
+            <!-- Brief Bio Section -->
+            <p class="mt-4 max-w-xl mx-auto text-slate-700 text-sm sm:text-base leading-relaxed">
+                Hi! I'm Juosaiah. Between building software, games, and Arduino projects, you'll find me logging kilometers on the road, hitting enduro trails, casting lures at local lakes, or strumming 70s Manila Sound on guitar.
+            </p>
+
+            <!-- Quick Action Links -->
+            <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+                <a href="#hobbies" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium bg-gradient-to-r from-cyan-700 to-sky-700 text-white hover:from-cyan-600 hover:to-sky-600 transition-all shadow-md shadow-cyan-950/20">
+                    <span>Explore My Hobbies</span>
+                    <i class="fa-solid fa-water text-xs"></i>
+                </a>
+                <button id="copy-handle-btn" type="button" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs sm:text-sm font-medium bg-white/80 text-cyan-950 border border-cyan-200/80 hover:bg-white transition-colors shadow-sm">
+                    <i class="fa-regular fa-copy text-xs text-cyan-700"></i>
+                    <span id="copy-btn-text">@juosaiah</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Hobbies Section -->
+        <section id="hobbies" class="space-y-4">
+            <div class="flex items-center justify-between px-2">
+                <h2 class="text-lg sm:text-xl font-bold text-white drop-shadow-sm tracking-tight flex items-center gap-2">
+                    <i class="fa-solid fa-compass text-cyan-200 text-base"></i>
+                    <span>My Hobbies & Interests</span>
+                </h2>
+                <span class="text-xs font-semibold text-cyan-950 bg-white/80 backdrop-blur-md px-3.5 py-1 rounded-full shadow-sm border border-white/60">
+                    8 Favorites
+                </span>
+            </div>
+
+            <!-- Responsive Frosted Glass Card Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+
+                <!-- Hobby Card 1: Distance Running -->
+                <article class="bg-white/85 backdrop-blur-lg rounded-2xl p-6 shadow-lg shadow-cyan-950/15 border border-white/60 flex items-start gap-4 transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/95">
+                    <div class="w-12 h-12 rounded-xl bg-sky-100/90 text-sky-700 flex items-center justify-center shrink-0 text-xl shadow-inner">
+                        <i class="fa-solid fa-person-running"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-slate-900 text-base">Distance Running</h3>
+                        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                            Pushing endurance through 8 km daily targets, 100 km monthly goals, and 21 km half marathons.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Hobby Card 2: Upper-Body Calisthenics -->
+                <article class="bg-white/85 backdrop-blur-lg rounded-2xl p-6 shadow-lg shadow-cyan-950/15 border border-white/60 flex items-start gap-4 transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/95">
+                    <div class="w-12 h-12 rounded-xl bg-teal-100/90 text-teal-700 flex items-center justify-center shrink-0 text-xl shadow-inner">
+                        <i class="fa-solid fa-dumbbell"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-slate-900 text-base">Upper-Body Calisthenics</h3>
+                        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                            Building bodyweight strength with dead-hang pull-ups, chin-ups, push-ups, and core progression.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Hobby Card 3: Freshwater Lure Fishing -->
+                <article class="bg-white/85 backdrop-blur-lg rounded-2xl p-6 shadow-lg shadow-cyan-950/15 border border-white/60 flex items-start gap-4 transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/95">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-100/90 text-cyan-700 flex items-center justify-center shrink-0 text-xl shadow-inner">
+                        <i class="fa-solid fa-fish"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-slate-900 text-base">Freshwater Lure Fishing</h3>
+                        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                            Spending quiet mornings casting artificial lures and paddle tails across local lakes.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Hobby Card 4: Badminton -->
+                <article class="bg-white/85 backdrop-blur-lg rounded-2xl p-6 shadow-lg shadow-cyan-950/15 border border-white/60 flex items-start gap-4 transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/95">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100/90 text-emerald-700 flex items-center justify-center shrink-0 text-xl shadow-inner">
+                        <i class="fa-solid fa-feather-pointed"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-slate-900 text-base">Badminton</h3>
+                        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                            Fast-paced rallies in recreational court matches and competitive intramural tournament play.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Hobby Card 5: Software & Game Dev -->
+                <article class="bg-white/85 backdrop-blur-lg rounded-2xl p-6 shadow-lg shadow-cyan-950/15 border border-white/60 flex items-start gap-4 transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/95">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100/90 text-blue-700 flex items-center justify-center shrink-0 text-xl shadow-inner">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-slate-900 text-base">Software & Game Dev</h3>
+                        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                            Building apps, interactive games, and experimental Arduino and embedded systems projects.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Hobby Card 6: Playing Guitar -->
+                <article class="bg-white/85 backdrop-blur-lg rounded-2xl p-6 shadow-lg shadow-cyan-950/15 border border-white/60 flex items-start gap-4 transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/95">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100/90 text-amber-700 flex items-center justify-center shrink-0 text-xl shadow-inner">
+                        <i class="fa-solid fa-guitar"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-slate-900 text-base">Playing Guitar</h3>
+                        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                            Strumming classic rock, soulful grooves, and nostalgic 70s Manila Sound tracks.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Hobby Card 7: PC Gaming -->
+                <article class="bg-white/85 backdrop-blur-lg rounded-2xl p-6 shadow-lg shadow-cyan-950/15 border border-white/60 flex items-start gap-4 transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/95">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-100/90 text-indigo-700 flex items-center justify-center shrink-0 text-xl shadow-inner">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-slate-900 text-base">PC Gaming</h3>
+                        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                            Exploring creative worlds in Minecraft and queuing up for tactical matches in Valorant.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Hobby Card 8: Enduro Mountain Biking -->
+                <article class="bg-white/85 backdrop-blur-lg rounded-2xl p-6 shadow-lg shadow-cyan-950/15 border border-white/60 flex items-start gap-4 transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/95">
+                    <div class="w-12 h-12 rounded-xl bg-teal-100/90 text-teal-800 flex items-center justify-center shrink-0 text-xl shadow-inner">
+                        <i class="fa-solid fa-person-biking"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-slate-900 text-base">Enduro Mountain Biking</h3>
+                        <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                            Tackling technical descents, rugged trail riding, and weekend off-road cycling adventures.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Minimal Footer -->
+        <footer class="text-center text-xs text-cyan-100/80 pt-2 pb-4 drop-shadow-sm">
+            <p>Juosaiah Navida &bull; Hover over the profile photo to upload a new picture anytime</p>
+        </footer>
+
+    </main>
+
+    <!-- Custom Toast Notification (Replaces alert) -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 bg-slate-900/90 backdrop-blur-md border border-cyan-500/30 text-white text-xs font-medium px-4 py-3 rounded-xl shadow-xl opacity-0 pointer-events-none transition-opacity duration-300 flex items-center gap-2">
+        <i class="fa-solid fa-circle-check text-cyan-400"></i>
+        <span id="toast-message">Copied to clipboard!</span>
+    </div>
+
+    <script>
+        // Allow user to preview their own profile picture locally
+        const pfpInput = document.getElementById('pfp-upload');
+        const profilePic = document.getElementById('profile-pic');
+
+        if (pfpInput && profilePic) {
+            pfpInput.addEventListener('change', function (event) {
+                const file = event.target.files[0];
+                if (file && file.type.startsWith('image/')) {
+                    const objectUrl = URL.createObjectURL(file);
+                    profilePic.src = objectUrl;
+                    showToast('Profile picture updated!');
+                }
+            });
+        }
+
+        // Copy handle button functionality using safe execCommand fallback
+        const copyBtn = document.getElementById('copy-handle-btn');
+        const copyBtnText = document.getElementById('copy-btn-text');
+
+        if (copyBtn) {
+            copyBtn.addEventListener('click', function () {
+                const handleText = '@juosaiah';
+                const tempInput = document.createElement('input');
+                tempInput.value = handleText;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                try {
+                    document.execCommand('copy');
+                    copyBtnText.textContent = 'Copied!';
+                    showToast('Handle copied to clipboard');
+                    setTimeout(() => {
+                        copyBtnText.textContent = handleText;
+                    }, 2000);
+                } catch (err) {
+                    showToast('Could not copy handle');
+                }
+                document.body.removeChild(tempInput);
+            });
+        }
+
+        // Helper for subtle toast feedback
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            if (!toast || !toastMsg) return;
+
+            toastMsg.textContent = message;
+            toast.classList.remove('opacity-0');
+            toast.classList.add('opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0');
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
