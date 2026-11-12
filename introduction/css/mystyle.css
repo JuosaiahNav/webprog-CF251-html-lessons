@@ -13,16 +13,15 @@ body {
 }
 
 header {
-  max-width: 800px;
+  max-width: 1100px;
   margin: 0 auto 1.5rem auto;
   background-color: #111827;
   color: #ffffff;
-  padding: 2.5rem 1.5rem;
+  padding: 2rem 1.5rem;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
   gap: 0.4rem;
 }
@@ -36,48 +35,73 @@ header p {
   font-size: 1.05rem;
 }
 
-main {
-  max-width: 800px;
+.three-col-layout {
+  max-width: 1100px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 1.5rem;
+  align-items: stretch;
 }
 
-section {
+.column {
+  flex: 1 1 280px;
   background-color: #ffffff;
   padding: 1.75rem;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
 }
 
 h2 {
   color: #111827;
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
+  font-size: 1.35rem;
+  margin-bottom: 1.2rem;
   padding-bottom: 0.4rem;
   border-bottom: 2px solid #2563eb;
 }
 
-p {
-  margin-bottom: 0.8rem;
-}
-
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+ul {
   list-style: none;
-  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
 }
 
-.flex-card {
-  flex: 1 1 240px;
+li {
   background-color: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-left: 4px solid #2563eb;
-  border-radius: 6px;
-  padding: 1rem;
+  border-left: 3px solid #2563eb;
+  padding: 0.65rem 0.85rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.photo-column {
+  align-items: center;
+}
+
+.photo-column h2 {
+  width: 100%;
+  text-align: left;
+}
+
+.photo-frame {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+.photo-frame img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid #2563eb;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 a {
@@ -91,7 +115,7 @@ a:hover {
 }
 
 footer {
-  max-width: 800px;
+  max-width: 1100px;
   margin: 2rem auto 0 auto;
   display: flex;
   justify-content: center;
