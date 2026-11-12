@@ -1,114 +1,101 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juosaiah Navida - My Profile</title>
+    <title> Navida</title>
     <style>
-        /* Basic page styling */
         body {
-            background-color: white;
-            color: #222222;
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             line-height: 1.6;
+            color: #222222;
+            background-color: #f9f9f9;
             margin: 0;
-            padding: 0;
-        }
-
-        /* Centered main container */
-        .container {
-            max-width: 650px;
-            margin: 40px auto;
             padding: 20px;
         }
 
-        /* Top profile section */
-        .profile-header {
-            text-align: center;
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border: 1px solid #dddddd;
         }
 
-        /* Circular profile picture */
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: top;
-            border: 3px solid #dddddd;
-        }
-
-        h1 {
-            margin-top: 15px;
-            margin-bottom: 8px;
-            font-size: 28px;
-        }
-
-        .bio {
-            color: #555555;
-            font-size: 16px;
+        header {
+            border-bottom: 1px solid #dddddd;
+            padding-bottom: 15px;
             margin-bottom: 25px;
         }
 
-        /* Simple horizontal divider line */
-        hr {
-            border: none;
-            border-top: 1px solid #eeeeee;
-            margin: 25px 0;
+        h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
         }
 
-        /* Hobbies list styling */
         h2 {
-            font-size: 22px;
-            margin-bottom: 15px;
+            font-size: 20px;
+            border-bottom: 1px solid #eeeeee;
+            padding-bottom: 5px;
+            margin-top: 25px;
         }
 
-        ul.hobbies-list {
-            list-style-type: none;
-            padding: 0;
+        p {
+            margin: 8px 0;
         }
 
-        ul.hobbies-list li {
-            background-color: #fafafa;
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            padding: 12px 16px;
-            margin-bottom: 10px;
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        footer {
+            margin-top: 35px;
+            padding-top: 15px;
+            border-top: 1px solid #dddddd;
+            font-size: 14px;
+            color: #666666;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        
-        <!-- Profile Picture & Bio -->
-        <div class="profile-header">
-            <img 
-                src="NAVIDA JUOSAIAH OROBIA PIC .jpg" 
-                onerror="this.src='https://placehold.co/150x150/eeeeee/555555?text=JN'"
-                alt="Juosaiah Navida Profile Picture" 
-                class="profile-pic"
-            >
+        <header>
             <h1>Juosaiah Navida</h1>
-            <p class="bio">
-                BS Computer Science student specializing in Cybersecurity &amp; Forensics. Passionate about distance running, coding, and the outdoors.
-            </p>
-        </div>
+            <p>Computer Science Student</p>
+        </header>
 
-        <hr>
+        <section>
+            <h2>Education</h2>
+            <p><strong>School:</strong> Asia Pacific College</p>
+            <p><strong>Course:</strong> BS Computer Science with Specialization in Cybersecurity and Forensics</p>
+            <p><strong>Elective Track:</strong> Cloud Computing &amp; Virtualization</p>
+        </section>
 
-        <!-- Hobbies Section -->
-        <h2>My Hobbies</h2>
-        <ul class="hobbies-list">
-            <li><strong>Distance Running</strong> – Training for 8 km daily runs, 100 km monthly goals, and 21 km half marathons.</li>
-            <li><strong>Upper-Body Calisthenics</strong> – Practicing dead-hang pull-ups, chin-ups, and push-ups.</li>
-            <li><strong>Freshwater Lure Fishing</strong> – Casting artificial lures and paddle tails at local lakes.</li>
-            <li><strong>Badminton</strong> – Playing casual court matches and intramural games.</li>
-            <li><strong>Software &amp; Game Development</strong> – Building apps, games, and Arduino projects.</li>
-            <li><strong>Playing Guitar</strong> – Strumming classic rock and 70s Manila Sound songs.</li>
-            <li><strong>PC Gaming</strong> – Playing Minecraft and Valorant.</li>
-            <li><strong>Enduro Mountain Biking</strong> – Riding trails and off-road cycling routes.</li>
-        </ul>
+        <section>
+            <h2>Hobbies and Interests</h2>
+            <ul>
+                <li>Distance Running</li>
+                <li>Calisthenics</li>
+                <li>Recreational Lure Fishing</li>
+                <li>Badminton</li>
+                <li>Playing Guitar</li>
+                <li>Game Development &amp; Arduino Projects</li>
+            </ul>
+        </section>
 
+        <section>
+            <h2>Future Coursework / Projects</h2>
+            <p>This section is reserved for upcoming laboratory activities, scripts, and projects as the term progresses.</p>
+        </section>
+
+        <footer>
+            <p>Juosaiah Navida - GitHub Pages Starter Site</p>
+        </footer>
     </div>
 
 </body>
