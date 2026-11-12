@@ -15,16 +15,20 @@ body {
 header {
   max-width: 800px;
   margin: 0 auto 1.5rem auto;
-  text-align: center;
   background-color: #111827;
   color: #ffffff;
   padding: 2.5rem 1.5rem;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.4rem;
 }
 
 header h1 {
   font-size: 2.2rem;
-  margin-bottom: 0.4rem;
 }
 
 header p {
@@ -35,12 +39,14 @@ header p {
 main {
   max-width: 800px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 section {
   background-color: #ffffff;
   padding: 1.75rem;
-  margin-bottom: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
@@ -57,13 +63,21 @@ p {
   margin-bottom: 0.8rem;
 }
 
-ul {
-  list-style-position: inside;
-  margin-left: 0.5rem;
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  margin-left: 0;
 }
 
-li {
-  margin-bottom: 0.4rem;
+.flex-card {
+  flex: 1 1 240px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #2563eb;
+  border-radius: 6px;
+  padding: 1rem;
 }
 
 a {
@@ -79,7 +93,8 @@ a:hover {
 footer {
   max-width: 800px;
   margin: 2rem auto 0 auto;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   color: #6b7280;
   font-size: 0.9rem;
 }
