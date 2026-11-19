@@ -5,52 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Juosaiah Navida | Personal Profile</title>
   <link rel="stylesheet" href="mystyle.css">
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-      min-height: 100vh;
-    }
-
-    .three-col-layout {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
-      padding: 1.5rem;
-      align-items: start;
-    }
-
-    .column {
-      display: grid;
-      grid-template-rows: auto 1fr;
-      gap: 0.75rem;
-    }
-
-    .photo-frame {
-      display: grid;
-      place-items: center;
-    }
-
-    .photo-frame img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    @media (max-width: 900px) {
-      .three-col-layout {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
-<body>
-  <header>
+<body class="page-grid">
+  <header class="site-header">
     <h1>Juosaiah Navida</h1>
     <p>BS Computer Science — Cybersecurity & Forensics</p>
   </header>
@@ -58,7 +15,7 @@
   <main class="three-col-layout">
     <section class="column">
       <h2>Personal Info</h2>
-      <ul>
+      <ul class="info-grid">
         <li><strong>Name:</strong> Juosaiah Orobia Navida</li>
         <li><strong>Age:</strong> 19</li>
         <li><strong>Location:</strong> Makati City, Metro Manila</li>
@@ -78,7 +35,7 @@
 
     <section class="column">
       <h2>Hobbies & Interests</h2>
-      <ul>
+      <ul class="info-grid">
         <li><strong>Distance Running:</strong> 8 km daily target & half-marathon training</li>
         <li><strong>Calisthenics & Badminton:</strong> Pull-ups, core progressions & court matches</li>
         <li><strong>Tech & Homelabbing:</strong> Linux virtualization (Ubuntu/Kali), Arduino & Python</li>
@@ -87,7 +44,7 @@
     </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <p>&copy; 2026 Juosaiah Navida. All rights reserved.</p>
   </footer>
 </body>
