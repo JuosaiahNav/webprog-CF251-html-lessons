@@ -2,59 +2,125 @@
   box-sizing: border-box;
 }
 
-body {
+/* CSS Grid: Outer Page Shell */
+body.page-grid {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #f4f6f8;
   color: #1f2933;
   line-height: 1.6;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
-header,
-footer {
+/* CSS Flexbox: Header & Footer */
+.flex-header {
   background-color: #102a43;
   color: #ffffff;
-  text-align: center;
-  padding: 1.5rem 1rem;
+  padding: 1.25rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 
-header h1 {
-  margin: 0 0 0.25rem;
-}
-
-header p,
-footer p {
+.header-title h1,
+.header-title p {
   margin: 0;
 }
 
-.three-col-layout {
-  max-width: 1100px;
-  margin: 2rem auto;
-  padding: 0 1.5rem;
+.header-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
+.header-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.header-links a:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.flex-footer {
+  background-color: #102a43;
+  color: #ffffff;
+  padding: 1.25rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-footer p {
+  margin: 0;
+}
+
+/* CSS Grid: Main 3-Column Section Layout */
+.three-col-layout {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* CSS Flexbox: Inside Each Card */
 .column {
   background-color: #ffffff;
   border: 1px solid #d9e2ec;
   border-radius: 8px;
   padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.column h2 {
-  margin-top: 0;
-  color: #102a43;
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-bottom: 2px solid #bcccdc;
   padding-bottom: 0.5rem;
 }
 
-.column ul {
-  padding-left: 1.25rem;
+.card-header h2 {
   margin: 0;
+  color: #102a43;
+  font-size: 1.25rem;
 }
 
-.column li {
-  margin-bottom: 0.5rem;
+.badge {
+  background-color: #d9e2ec;
+  color: #102a43;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+.flex-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.flex-list li {
+  display: flex;
+  flex-direction: column;
 }
 
 .column a {
@@ -66,8 +132,11 @@ footer p {
   text-decoration: underline;
 }
 
-.photo-frame {
-  text-align: center;
+.flex-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .photo-frame img {
@@ -76,4 +145,16 @@ footer p {
   object-fit: cover;
   border-radius: 8px;
   border: 2px solid #102a43;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .three-col-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .flex-header {
+    flex-direction: column;
+    text-align: center;
+  }
 }
