@@ -5,6 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Juosaiah Navida | Personal Profile</title>
   <link rel="stylesheet" href="mystyle.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100vh;
+    }
+
+    .three-col-layout {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      padding: 1.5rem;
+      align-items: start;
+    }
+
+    .column {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 0.75rem;
+    }
+
+    .photo-frame {
+      display: grid;
+      place-items: center;
+    }
+
+    .photo-frame img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .three-col-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
