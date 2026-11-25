@@ -5,6 +5,7 @@
 body {
   font-family: "Lucida Sans", sans-serif;
   font-size: 17px;
+  margin: 0;
 }
 
 .grid-container {
@@ -16,7 +17,8 @@ body {
     'facts'
     'footer';
   background-color: white;
-  gap: 10px;  
+  gap: 10px;
+  padding: 10px;
 }
 
 .header {
@@ -24,16 +26,18 @@ body {
   background-color: purple;
   text-align: center;
   color: #ffffff;
+  padding: 15px;
 }
 
 .header > h1 {
   font-size: 40px;
+  margin: 0;
 }
 
 .menu {
   grid-area: menu;
 }
-  
+
 .menu ul {
   list-style-type: none;
   margin: 0;
@@ -50,13 +54,15 @@ body {
 .menu li:hover {
   background-color: #0099cc;
 }
-  
+
 .content {
   grid-area: main;
+  padding: 10px;
 }
 
 .content > h1 {
   font-size: 30px;
+  margin-top: 0;
   margin-bottom: 7px;
 }
 
@@ -73,6 +79,7 @@ body {
 
 .facts > h2 {
   font-size: 20px;
+  margin-top: 0;
 }
 
 .facts li {
@@ -84,20 +91,26 @@ body {
   background-color: #0099cc;
   color: #ffffff;
   text-align: center;
+  padding: 10px;
 }
 
 @media (min-width: 600px) {
-  .header {grid-area: 1 / span 6;}
-  .menu {grid-area: 2 / span 1;}
-  .content {grid-area: 2 / span 4;}
-  .facts {grid-area: 3 / span 6;}
-  .footer {grid-area: 4 / span 6;}
+  .grid-container {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+      'header header header header header header'
+      'menu main main main main main'
+      'facts facts facts facts facts facts'
+      'footer footer footer footer footer footer';
+  }
 }
 
 @media (min-width: 768px) {
-  .header {grid-area: 1 / span 6;}
-  .menu {grid-area: 2 / span 1;}
-  .content {grid-area: 2 / span 4;}
-  .facts {grid-area: 2 / span 1;}
-  .footer {grid-area: 3 / span 6;}
+  .grid-container {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+      'header header header header header header'
+      'menu main main main main facts'
+      'footer footer footer footer footer footer';
+  }
 }
