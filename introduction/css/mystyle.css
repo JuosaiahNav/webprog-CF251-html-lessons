@@ -32,7 +32,7 @@ body {
 
 .menu {
   grid-area: menu;
-  }
+}
   
 .menu ul {
   list-style-type: none;
