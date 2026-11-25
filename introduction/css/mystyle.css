@@ -2,7 +2,6 @@
   box-sizing: border-box;
 }
 
-/* CSS Grid: Outer Page Shell */
 body.page-grid {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -14,7 +13,6 @@ body.page-grid {
   grid-template-rows: auto 1fr auto;
 }
 
-/* CSS Flexbox: Header & Footer */
 .flex-header {
   background-color: #102a43;
   color: #ffffff;
@@ -26,22 +24,27 @@ body.page-grid {
   gap: 1rem;
 }
 
-.header-title h1,
-.header-title p {
+.header-title h1 {
   margin: 0;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+}
+
+.header-title p {
+  margin: 0.2rem 0 0;
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
 }
 
 .header-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .header-links a {
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
-  padding: 0.35rem 0.75rem;
+  padding: 0.45rem 0.85rem;
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.12);
 }
@@ -57,16 +60,17 @@ body.page-grid {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .flex-footer p {
   margin: 0;
 }
 
-/* CSS Grid: Main 3-Column Section Layout */
+/* Desktop: 3 Columns */
 .three-col-layout {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
   display: grid;
@@ -75,7 +79,6 @@ body.page-grid {
   align-items: stretch;
 }
 
-/* CSS Flexbox: Inside Each Card */
 .column {
   background-color: #ffffff;
   border: 1px solid #d9e2ec;
@@ -121,6 +124,7 @@ body.page-grid {
 .flex-list li {
   display: flex;
   flex-direction: column;
+  word-break: break-word;
 }
 
 .column a {
@@ -140,21 +144,53 @@ body.page-grid {
 }
 
 .photo-frame img {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 8px;
   border: 2px solid #102a43;
   display: block;
 }
 
-@media (max-width: 900px) {
+/* Tablet Breakpoint (768px - 1023px): 2 Columns */
+@media (max-width: 1023px) {
   .three-col-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 1.5rem 1.25rem;
   }
 
+  .three-col-layout .column:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Mobile Breakpoint (below 768px): 1 Column + Stacked Header */
+@media (max-width: 767px) {
   .flex-header {
     flex-direction: column;
     text-align: center;
+    padding: 1rem;
+  }
+
+  .header-links {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .header-links a {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .three-col-layout {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .column {
+    padding: 1.25rem;
   }
 }
