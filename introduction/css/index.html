@@ -3,48 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juosaiah Navida | Personal Profile</title>
+  <title>Juosaiah Navida | Responsive Personal Profile</title>
   <link rel="stylesheet" href="mystyle.css">
 </head>
 <body class="page-grid">
-  <header class="site-header">
-    <h1>Juosaiah Navida</h1>
-    <p>BS Computer Science — Cybersecurity & Forensics</p>
+  <header class="site-header flex-header">
+    <div class="header-title">
+      <h1>Juosaiah Navida</h1>
+      <p>BS Computer Science — Cybersecurity & Forensics</p>
+    </div>
+    <nav class="header-links">
+      <a href="#personal-info">Personal Info</a>
+      <a href="#id-picture">ID Picture</a>
+      <a href="#hobbies">Hobbies</a>
+    </nav>
   </header>
 
   <main class="three-col-layout">
-    <section class="column">
-      <h2>Personal Info</h2>
-      <ul class="info-grid">
-        <li><strong>Name:</strong> Juosaiah Orobia Navida</li>
-        <li><strong>Age:</strong> 19</li>
-        <li><strong>Location:</strong> Makati City, Metro Manila</li>
-        <li><strong>School:</strong> Asia Pacific College</li>
-        <li><strong>Program:</strong> BSCS — Cybersecurity & Forensics</li>
-        <li><strong>Elective Track:</strong> Cloud Computing & Virtualization</li>
+    <section id="personal-info" class="column">
+      <div class="card-header">
+        <h2>Personal Info</h2>
+        <span class="badge">Profile</span>
+      </div>
+      <ul class="flex-list">
+        <li><strong>Name:</strong> <span>Juosaiah Orobia Navida</span></li>
+        <li><strong>Age:</strong> <span>19</span></li>
+        <li><strong>Location:</strong> <span>Makati City, Metro Manila</span></li>
+        <li><strong>School:</strong> <span>Asia Pacific College</span></li>
+        <li><strong>Program:</strong> <span>BSCS — Cybersecurity & Forensics</span></li>
+        <li><strong>Elective Track:</strong> <span>Cloud Computing & Virtualization</span></li>
         <li><strong>GitHub:</strong> <a href="https://github.com/JuosaiahNav" target="_blank">github.com/JuosaiahNav</a></li>
       </ul>
     </section>
 
-    <section class="column photo-column">
-      <h2>ID Picture</h2>
-      <div class="photo-frame">
+    <section id="id-picture" class="column photo-column">
+      <div class="card-header">
+        <h2>ID Picture</h2>
+        <span class="badge">2x2</span>
+      </div>
+      <div class="photo-frame flex-center">
         <img src="PMMA 2X2.png" alt="Juosaiah Navida ID Picture">
       </div>
     </section>
 
-    <section class="column">
-      <h2>Hobbies & Interests</h2>
-      <ul class="info-grid">
-        <li><strong>Distance Running:</strong> 8 km daily target & half-marathon training</li>
-        <li><strong>Calisthenics & Badminton:</strong> Pull-ups, core progressions & court matches</li>
-        <li><strong>Tech & Homelabbing:</strong> Linux virtualization (Ubuntu/Kali), Arduino & Python</li>
-        <li><strong>Music & Fishing:</strong> Acoustic guitar & freshwater lure fishing</li>
+    <section id="hobbies" class="column">
+      <div class="card-header">
+        <h2>Hobbies & Interests</h2>
+        <span class="badge">Activities</span>
+      </div>
+      <ul class="flex-list">
+        <li><strong>Distance Running:</strong> <span>8 km daily target & half-marathon training</span></li>
+        <li><strong>Calisthenics & Badminton:</strong> <span>Pull-ups, core progressions & court matches</span></li>
+        <li><strong>Tech & Homelabbing:</strong> <span>Linux virtualization (Ubuntu/Kali), Arduino & Python</span></li>
+        <li><strong>Music & Fishing:</strong> <span>Acoustic guitar & freshwater lure fishing</span></li>
       </ul>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer flex-footer">
     <p>&copy; 2026 Juosaiah Navida. All rights reserved.</p>
   </footer>
 </body>
